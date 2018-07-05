@@ -1,0 +1,53 @@
+<mvc:View controllerName="com.myagri.controller.Object" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:table="sap.ui.table" xmlns:i="sap.ui.core">
+	<App id="View1">
+		<pages>
+			<Page class="pageBackgroundImgClass">
+				<customHeader>
+					<Bar>
+						<contentLeft>
+							<Text text=""></Text>
+						</contentLeft>
+						<contentMiddle>
+							<Label text="{i18n>applnParaHeader}" class="pageheadertextClass"/>
+						</contentMiddle>
+					</Bar>
+				</customHeader>
+				<content>
+				
+							<VBox alignItems="Center" justifyContent="Center" class="sapUiLargeMarginTop appParaHeaderClass">
+							<ObjectHeader  title="Company Code : GA16" number="Total Qty : 1.00">
+								<statuses>
+									<ObjectStatus text="Available Qty : 1018000032"/>
+									<ObjectStatus text="Work Order : 1018000032"/>
+								</statuses>
+								<attributes>
+									<ObjectAttribute text="Plant : 1102"/>
+									<ObjectAttribute text="Crop : Palm" class="closingBalanceClass"/>
+									<ObjectAttribute text="Material : TIU-020210" class="closingBalanceClass"/>
+								</attributes>
+							</ObjectHeader>
+							<VBox  id="VerticalLayout">
+								
+							</VBox>
+							<FlexBox justifyContent="Center">
+								<items>
+									<Button text="{i18n>save}" icon="" press="onSave" type="Accept" class="saveBtn"/>
+								</items>
+							</FlexBox>
+						<!--	<l:HorizontalLayout id="VerticalLayout"></l:HorizontalLayout>-->
+							</VBox>
+						
+				</content>
+				<!--<footer >
+					<Bar>
+						<contentRight>
+						
+						</contentRight>
+					</Bar>
+				</footer>-->
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,477 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table"
+	xmlns:i="sap.ui.core" xmlns:micro="sap.suite.ui.microchart" controllerName="com.myagri.controller.Worklist" displayBlock="true">
+	<App id="View1">
+		<pages>
+			<Page showHeader="false" enableScrolling="true" class="pageBackgroundImgClass">
+			<!--	<customHeader>
+					<Bar>
+						<contentLeft>
+							<Text text=""></Text>
+						</contentLeft>
+						<contentMiddle>
+							<Label text="My Agri" class="pageheadertextClass"/>
+						</contentMiddle>
+					</Bar>
+				</customHeader>-->
+				<content>
+					<HBox class="clHBoxHeater" alignItems="Center" justifyContent="Center">
+						<VBox width="25%" class="clVBox1" alignItems="Center" justifyContent="Center">
+							<HBox alignItems="Center" justifyContent="Center">
+								<Image visible="true" width="auto" class="weighimg"/>
+								<VBox>
+									<Title text="My Agri" textAlign="Center" titleStyle="H4" class="TextcolEA sapUiSmallMarginBegin"/>
+									<Label textAlign="Center" class="TextcolEA sapUiSmallMarginBegin"/>
+								</VBox>
+							</HBox>
+						</VBox>
+						<VBox width="12%" visible="{oModeModel>/WB}" class="clVBox2 sapUiSmallMarginBegin" alignItems="Center" justifyContent="Center">
+							<Title text="Total Quantity" textAlign="Center" titleStyle="H6" class="Textcol"/>
+							<Title text="0.000" textAlign="Center" titleStyle="H3" class="Textcol1"/>
+							<Title textAlign="Center" text="KG" titleStyle="H6" class="TextcolSize"/>
+						</VBox>
+						<VBox width="12%" class="clVBox2 sapUiSmallMarginBegin" alignItems="Center" justifyContent="Center">
+							<Title text="Available Quantity" textAlign="Center" titleStyle="H6" class="Textcol"/>
+							<Title text="0.00" textAlign="Center" titleStyle="H3" class="Textcol1"/>
+							<Title textAlign="Center" text="KG" titleStyle="H6" class="TextcolSize"/>
+						</VBox>
+						<VBox width="12%" class="clVBox2 sapUiSmallMarginBegin" alignItems="Center" justifyContent="Center">
+							<Title text="Tanks" textAlign="Center" titleStyle="H6" class="Textcol"/>
+							<Title text="0.00" textAlign="Center" titleStyle="H3" class="Textcol1"/>
+							<Title textAlign="Center" text="KG" titleStyle="H3" class="TextcolSize"/>
+						</VBox>
+						<HBox width="44%" class="" alignItems="End" justifyContent="End">
+							<Button text="Save" icon="sap-icon://save" width="8rem" class="sapUiSmallMarginEnd clButtonCor"/>
+						</HBox>
+					</HBox>
+					<!--<Panel class="sapUiSizeCompact">-->
+						<VBox  visible="true" alignItems="Center" justifyContent="Center" class="sapUiTinyMarginTop headerClass">
+				
+						<f:Form editable="true" class="sapUiSizeCompact">
+							<f:toolbar >
+								<Toolbar>
+									<Title text="Header Details" class="panelHeaderTextClass"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://add-filter" tooltip="Filter Additional Data" class="sapUiSmallMarginEnd clButtonCor" press="onAddFilterPress"/>
+								</Toolbar>
+							</f:toolbar>
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+									emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="3" singleContainerFullSize="false"/>
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement>
+											<f:label>
+												<Label class="labelClass" text="Company Code"></Label>
+											</f:label>
+											<f:fields>
+												<Input showValueHelp="true" class="input"></Input>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement>
+											<f:label>
+												<Label class="labelClass" text="Plant"></Label>
+											</f:label>
+											<f:fields>
+												<Input class="input"></Input>
+											</f:fields>
+										</f:FormElement>
+										<!--        <f:FormElement>
+                                                                                                                                                                <f:label>
+                                                                                                                                                                                <Label class="labelClass" text="Crop"></Label>
+                                                                                                                                                                </f:label>
+                                                                                                                                                                <f:fields>
+                                                                                                                                                                <Input  class="input" >
+                                                                                                                                                                                
+                                                                                                                                                                                </Input>
+                                                                                                                                                                </f:fields>
+                                                                                                                                                </f:FormElement>
+                                                                                                                                                
+                                                                                                                                                -->
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement>
+											<f:label>
+												<Label class="labelClass" text="Task Material"></Label>
+											</f:label>
+											<f:fields>
+												<Input class="input"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement>
+											<f:label>
+												<Label class="labelClass" text="Production Version"></Label>
+											</f:label>
+											<f:fields>
+												<Input class="input"/>
+											</f:fields>
+										</f:FormElement>
+										<!--        <f:FormElement>
+                                                                                                                                                                <f:label>
+                                                                                                                                                                                <Label class="labelClass" text="Work Order"></Label>
+                                                                                                                                                                </f:label>
+                                                                                                                                                                <f:fields>
+                                                                                                                                                                                <Input  class="input" />
+                                                                                                                                                                </f:fields>
+                                                                                                                                                </f:FormElement>-->
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement>
+											<f:label>
+												<Label class="labelClass" text="Crop"></Label>
+											</f:label>
+											<f:fields>
+												<Input class="input"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement>
+											<f:label>
+												<Label class="labelClass" text="Work Order"></Label>
+											</f:label>
+											<f:fields>
+												<Input class="input"/>
+											</f:fields>
+										</f:FormElement>
+										<!--        <f:FormElement>
+                                                                                                                                                                <f:label>
+                                                                                                                                                                                <Label class="labelClass" text="Tanks"></Label>
+                                                                                                                                                                </f:label>
+                                                                                                                                                                <f:fields>
+                                                                                                                                                                                <Input  class="input"/>
+                                                                                                                                                                </f:fields>
+                                                                                                                                                </f:FormElement>-->
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+						</VBox>
+				<l:Grid visible="true" defaultSpan="L4 M4 S6" class="sapUiSmallMarginTop">
+						<CustomListItem id="paymentTile" type="Active" press="onApplicationParameterPress" class="paymentTileClass">
+							<VBox>
+								<!--                                                                                                        <HBox width="100%" class="ChartHBox">-->
+								<!--<VBox width="37%" class="VBox_ChartAllign1">-->
+								<!--        <FlexBox width="6.25rem" height="6.25rem">-->
+								<!--                        <items>-->
+								<!--                                        <micro:RadialMicroChart class="chart" size="Responsive" percentage="20" press="press"></micro:RadialMicroChart>-->
+								<!--                        </items>-->
+								<!--        </FlexBox>-->
+								<!--<Text text="Overall Progress" class="overallProgress"></Text>-->
+								<!--</VBox>-->
+								<!--        <VBox width="50%" class="VBox_ChartAllign">
+                                                                                                                                <HBox>
+                                                                                                                                                <VBox width="6.25rem" height="6.25rem">
+                                                                                                                                                                <items>
+                                                                                                                                                                                <Text text="84" class="NoIssueText"></Text>
+                                                                                                                                                                                <Text text="Open Issues" class="IssueText"></Text>
+                                                                                                                                                                </items>
+                                                                                                                                                </VBox>
+                                                                                                                                                <VBox width="6.25rem" height="6.25rem">
+                                                                                                                                                                <items>
+                                                                                                                                                                                <Text text="72" class="NoIssueText_Closed"></Text>
+                                                                                                                                                                                <Text text="Closed Issues" class="IssueText"></Text>
+                                                                                                                                                                </items>
+                                                                                                                                                </VBox>
+                                                                                                                                </HBox>
+                                                                                                                                <Text text="Project Stage : UAT" class="overallProgress ProjectStage"></Text>
+                                                                                                                </VBox>-->
+								<!--</HBox>-->
+								<HBox justifyContent="Center">
+									<i:Icon width="4rem" height="4rem" class="paymentImgClass"/>
+								</HBox>
+								<HBox justifyContent="Center">
+									<Label text="Application Parameter" class="labelClass"></Label>
+								</HBox>
+							</VBox>
+						</CustomListItem>
+						<CustomListItem id="receiptsTile" type="Active" press="onFunctionalLocationPress" class="paymentTileClass">
+							<VBox>
+								<HBox justifyContent="Center">
+									<i:Icon width="4rem" height="4rem" class="receiptsImgClass"/>
+								</HBox>
+								<HBox justifyContent="Center">
+									<Label text="Functional Location" class="labelClass"></Label>
+								</HBox>
+							</VBox>
+						</CustomListItem>
+						<CustomListItem id="balanceTile" type="Active" press="onSubstanceListPress" class="paymentTileClass">
+							<VBox>
+								<HBox justifyContent="Center">
+									<i:Icon width="4rem" height="4rem" class="balanceImgClass"/>
+								</HBox>
+								<HBox justifyContent="Center">
+									<Label text="Substance List" class="labelClass"></Label>
+								</HBox>
+							</VBox>
+						</CustomListItem>
+					</l:Grid>
+			
+				<!--	</Panel>-->
+				<ScrollContainer
+					width="100%"
+					height="100%"
+					horizontal="true"
+					vertical="true"
+					focusable="true"
+					>
+				
+			
+				
+					<SegmentedButton class="segmentedButtonClass" visible="false" select="onSegmentedButton" selectedButton="" width="100%">
+						<buttons>
+							<Button text="Application Parameter" class="segmentLeftClass"/>
+							<Button text="Functional Location" class=""/>
+							<Button text="Substance List" class="segmentRightClass"/>
+						</buttons>
+					</SegmentedButton>
+					<VBox id="applicationParameterId" visible="false" alignItems="Center" justifyContent="Center" class="sapUiLargeMarginTop appParaHeaderClass">
+					<!--	<ObjectHeader title="Company Code : GA16" number="Total Qty : 1.00">
+							<statuses>
+								<ObjectStatus text="Available Qty : 1018000032"/>
+								<ObjectStatus text="Work Order : 1018000032"/>
+							</statuses>
+							<attributes>
+								<ObjectAttribute text="Plant : 1102"/>
+								<ObjectAttribute text="Crop : Palm" class="closingBalanceClass"/>
+								<ObjectAttribute text="Material : TIU-020210" class="closingBalanceClass"/>
+							</attributes>
+						</ObjectHeader>-->
+						<VBox id="VerticalLayout"></VBox>
+					<!--	<FlexBox justifyContent="Center">
+							<items>
+								<Button text="{i18n>save}" icon="" press="onSave" type="Accept" class="saveBtn"/>
+							</items>
+						</FlexBox>-->
+						<!--	<l:HorizontalLayout id="VerticalLayout"></l:HorizontalLayout>-->
+					</VBox>
+					<table:TreeTable visible="false" id="TreeTableBasic" rows="{path:'hierarchyModel>/d/result', parameters: {arrayNames:['child']}}"
+					selectionMode="None" 
+						showNoData="true" noDataText=" " expandFirstLevel="true" enableSelectAll="false" ariaLabelledBy="title"
+						toggleOpenState="toggleOpenStateFunction">
+						<table:extension>
+							<Toolbar>
+								<Title id="title" text=""/>
+								<ToolbarSpacer/>
+								<Button text="Collapse all" press="onCollapseAll"/>
+							</Toolbar>
+						</table:extension>
+						<table:columns>
+							<table:Column width="20%">
+								<Label design="Bold" class="" text="Functional Location"/>
+								<table:template>
+									<Link text="{hierarchyModel>FuncLoc}" press="onAccountHierarchyPress"></Link>
+								</table:template>
+							</table:Column>
+							<table:Column >
+								<Label design="Bold" class="" text="S.WO"/>
+								<table:template>
+									<CheckBox></CheckBox>
+								</table:template>
+							</table:Column>
+							<table:Column width="10%">
+								<Label design="Bold" class="" text="Sort Field"/>
+								<table:template>
+									<Text text="{path:'hierarchyModel>Sort'}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="10%">
+								<Label design="Bold" class="" text="Description"/>
+								<table:template>
+									<Text text="{path:'hierarchyModel>Desc'}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="10%">
+								<Label design="Bold" class="" text="Area"/>
+								<table:template>
+									<Link text="{hierarchyModel>Area}" press="onAccountHierarchyPress"></Link>
+								</table:template>
+							</table:Column>
+							<table:Column width="10%">
+								<Label design="Bold" class="" text="Unit"/>
+								<table:template>
+									<Text text="{hierarchyModel>Unit}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="10%">
+								<Label design="Bold" class="" text="CAT Order"/>
+								<table:template>
+									<Text text="{path:'hierarchyModel>FlagIdent'}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="10%">
+								<Label design="Bold" class="" text="Conf."/>
+								<table:template>
+									<CheckBox></CheckBox>
+								</table:template>
+							</table:Column>
+							<table:Column width="10%">
+								<Label design="Bold" class="" text="Close"/>
+								<table:template>
+									<CheckBox selected="{path:'hierarchyModel>selected'}"></CheckBox>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:TreeTable>
+				
+			
+					<Table id="substanceListId" visible="false" mode="MultiSelect" items="{path:'oModel>/'}" 
+						class="newTableClass sapUiSizeCompact" noDataText="{worklistView>/tableNoDataText}">
+						<headerToolbar>
+							<Toolbar >
+								<Title text="" level="H5" class="panelHeaderTextClass"/>
+								<ToolbarSpacer></ToolbarSpacer>
+								<!--        <Button icon="sap-icon://add" tooltip="Add" type="Accept" class="sapMTableContentMargin"
+                                                                                                                press="onAddSubstanceList"/>-->
+								<i:Icon src="sap-icon://add" color="#FFFFFF" width="2rem" height="2rem" class="addIconClass" press="onAddSubstanceList"></i:Icon>
+								<i:Icon src="sap-icon://delete" color="#FFFFFF" width="2rem" height="2rem" class="delIconClass" press="onDeleteSubstanceList"></i:Icon>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Product" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Description" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Storage Location" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Plant Qty" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Total" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Unit" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Batch" class="tableheaderClass"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Input value="{oModel>Product}"></Input>
+									<Text textAlign="Center" text="{oModel>Description}"></Text>
+									<Input value="{oModel>SLoc}"></Input>
+									<Input value="{oModel>Plant}"></Input>
+									<Input value="{oModel>Total}"></Input>
+									<Input value="{oModel>Unit}"></Input>
+									<Input value="{oModel>Batch}"></Input>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				
+					</ScrollContainer>
+				
+					<!--        <IconTabBar  expanded="{device>/isNoPhone}"  select="onSelectItemTab" selectedKey="Icon1">
+                                                                <items>
+                                                                                <IconTabFilter id="icon" icon="sap-icon://notes" text="Application Parameter" key="Icon1" iconColor="Positive">
+                                                                                                <content>
+                                                                                                                </content>
+                                                                                </IconTabFilter>
+                                                                                <IconTabSeparator icon="sap-icon://open-command-field"/>
+                                                                                <IconTabFilter icon="sap-icon://notes" text="Functional Location" key="Icon2" iconColor="Positive">
+                                                                                                <content>
+                                                                                                                  <table:TreeTable id=""
+                                                                                             rows="{path:'hierarchyModel>/d/result', parameters: {arrayNames:['child']}}"
+                                                                                              selectionMode="None" showNoData="true" noDataText=" "
+                                                                                              expandFirstLevel="true" enableSelectAll="false" ariaLabelledBy="title"
+                                                                                              toggleOpenState="toggleOpenStateFunction">
+                                                                                              <table:columns>
+                                                                                                <table:Column width="15%">
+                                                                                                  <Label design="Bold" class="" text="Functional Location" />
+                                                                                                  <table:template>
+                                                                                                    <Link text="{hierarchyModel>NodeId}" press="onAccountHierarchyPress"></Link>
+                                                                                                  </table:template>
+                                                                                                </table:Column>
+                                                                                                <table:Column >
+                                                                                                  <Label design="Bold" class="" text="S.WO" />
+                                                                                                  <table:template>
+                                                                                                    <Text text="{hierarchyModel>Description}" wrapping="false" />
+                                                                                                  </table:template>
+                                                                                                </table:Column>
+                                                                                                <table:Column >
+                                                                                                  <Label design="Bold" class="" text="Sort Field" />
+                                                                                                  <table:template>
+                                                                                                    <Text
+                                                                                                      text="{path:'hierarchyModel>ValidFrom',formatter:'NS.util.Formatter.dateC'}"
+                                                                                                      wrapping="false" />
+                                                                                                  </table:template>
+                                                                                                </table:Column>
+                                                                                                <table:Column >
+                                                                                                  <Label design="Bold" class="" text="Description" />
+                                                                                                  <table:template>
+                                                                                                    <Text
+                                                                                                      text="{path:'hierarchyModel>ValidTo',formatter:'NS.util.Formatter.dateC'}"
+                                                                                                      wrapping="false" />
+                                                                                                  </table:template>
+                                                                                                </table:Column>
+                                                                                                 <table:Column >
+                                                                                                  <Label design="Bold" class="" text="Area" />
+                                                                                                  <table:template>
+                                                                                                    <Link text="{hierarchyModel>NodeId}" press="onAccountHierarchyPress"></Link>
+                                                                                                  </table:template>
+                                                                                                </table:Column>
+                                                                                                <table:Column >
+                                                                                                  <Label design="Bold" class="" text="Unit" />
+                                                                                                  <table:template>
+                                                                                                    <Text text="{hierarchyModel>Description}" wrapping="false" />
+                                                                                                  </table:template>
+                                                                                                </table:Column>
+                                                                                                <table:Column >
+                                                                                                  <Label design="Bold" class="" text="CAT Order" />
+                                                                                                  <table:template>
+                                                                                                    <Text
+                                                                                                      text="{path:'hierarchyModel>ValidFrom',formatter:'NS.util.Formatter.dateC'}"
+                                                                                                      wrapping="false" />
+                                                                                                  </table:template>
+                                                                                                </table:Column>
+                                                                                                <table:Column >
+                                                                                                  <Label design="Bold" class="" text="Conf." />
+                                                                                                  <table:template>
+                                                                                                    <Text
+                                                                                                      text="{path:'hierarchyModel>ValidTo',formatter:'NS.util.Formatter.dateC'}"
+                                                                                                      wrapping="false" />
+                                                                                                  </table:template>
+                                                                                                </table:Column>
+                                                                                                 <table:Column >
+                                                                                                  <Label design="Bold" class="" text="Close" />
+                                                                                                  <table:template>
+                                                                                                    <Text
+                                                                                                      text="{path:'hierarchyModel>ValidTo',formatter:'NS.util.Formatter.dateC'}"
+                                                                                                      wrapping="false" />
+                                                                                                  </table:template>
+                                                                                                </table:Column>
+                                                                                              </table:columns>
+                                                                                            </table:TreeTable>
+                                                                                                                </content>
+                                                                                </IconTabFilter>
+                                                                                <IconTabSeparator icon="sap-icon://open-command-field"/>
+                                                                                <IconTabFilter icon="sap-icon://notes" text="Substance List" key="Icon3" iconColor="Positive">
+                                                                                                <content>
+
+                                                                                                </content>
+                                                                                </IconTabFilter>
+                                                                </items>
+                                                </IconTabBar>
+                                -->
+				</content>
+				<!--        <footer >
+                                                                                <Bar>
+                                                                                                <contentRight>
+                                                                                                                <Button  text="{i18n>save}" press="onSave" type="Accept" />
+                                                                                                </contentRight>
+                                                                                </Bar>
+                                                                </footer>-->
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,130 @@
+{
+    "Sheet1": [
+        {
+            "FuncLoc": "GA17-02-01-F1-001",
+            "SWO": " ",
+            "Sort": "EST01",
+            "Desc": "Division",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "P",
+            "selected" : true
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-001-0000001",
+            "Sort": "1",
+            "Desc": "Block000001",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+             "selected" : false
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-001-0000002",
+            "Sort": "2",
+            "Desc": "Block000002",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : true
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-001-0000003",
+            "Sort": "3",
+            "Desc": "Block000003",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : true
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-001-0000004",
+            "Sort": "4",
+            "Desc": "Block000004",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : true
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-001-0000005",
+            "Sort": "5",
+            "Desc": "Block000005",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : false
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-001-0000006",
+            "Sort": "6",
+            "Desc": "Block000006",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : true
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-002",
+            "Sort": "EST02",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "P",
+              "selected" : false
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-002-0000001",
+            "Sort": "1",
+            "Desc": "Block000001",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : false
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-002-0000002",
+            "Sort": "2",
+            "Desc": "Block000002",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : true
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-002-0000003",
+            "Sort": "3",
+            "Desc": "Block000003",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : true
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-002-0000004",
+            "Sort": "4",
+            "Desc": "Block000004",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : true
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-002-0000005",
+            "Sort": "5",
+            "Desc": "Block000005",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : false
+        },
+        {
+            "FuncLoc": "GA17-02-01-F1-002-0000006",
+            "Sort": "6",
+            "Desc": "Block000006",
+            "Area": "30.1",
+            "Unit": "HEC",
+            "FlagIdent": "C",
+              "selected" : false
+        }
+    ]
+}

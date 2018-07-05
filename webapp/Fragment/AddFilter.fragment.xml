@@ -1,0 +1,250 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:m="sap.ui.commons.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog verticalScrolling="false" contentWidth="40%" contentHeight="auto" stretchOnPhone="true" type="Standard">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Label text="User Profile"></Label>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://decline" press="onAddFilterClose"></Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+		<!--	<l:VerticalLayout></l:VerticalLayout>-->
+			<f:Form editable="true" class="sapUiSizeCompact">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+						emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+						
+								<f:FormElement>
+								<f:label>
+									<Label text="{i18n>area}" design="Bold"></Label>
+								</f:label>
+								<f:fields>
+									<ComboBox  class="input" width="80%"
+										selectionChange="onRailOperationChange"	>													
+										<ListItem xmlns="sap.ui.core" />
+									</ComboBox>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement>
+								<f:label>
+									<Label design="Bold" text="{i18n>functionLocation}"></Label>
+								</f:label>
+								<f:fields>
+									<ComboBox  class="input" width="80%"
+										selectionChange="onRailOperationChange"	>													
+										<ListItem xmlns="sap.ui.core"  />
+									</ComboBox>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement>
+								<f:label>
+									<Label text="{i18n>basicStartDate}" design="Bold"></Label>
+								</f:label>
+								<f:fields>
+									<DateTimePicker  enabled="true" value = "" valueFormat="yyyyMMdd:HHmmss" id="idRailOperationEDT2" 
+										 change="onEndDateChange" placeholder="Enter Date &amp; Time ..." width="80%"
+										class="input" />
+								</f:fields>
+							</f:FormElement>
+				
+						
+						
+							<f:FormElement>
+								<f:label>
+									<Label text="{i18n>productionZone}" design="Bold"></Label>
+								</f:label>
+								<f:fields>
+									<ComboBox  class="input"  width="80%"
+										selectionChange="onRailOperationChange"	>													
+										<ListItem xmlns="sap.ui.core" />
+									</ComboBox>
+									
+								</f:fields>
+							</f:FormElement>
+						
+							<f:FormElement>
+								<f:label>
+									<Label text="{i18n>fiscalYear}" design="Bold"></Label>
+								</f:label>
+								<f:fields>
+									<ComboBox  class="input" width="80%"
+										selectionChange="onRailOperationChange"	>													
+										<ListItem xmlns="sap.ui.core" />
+									</ComboBox>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement>
+								<f:label>
+									<Label design="Bold" text="{i18n>season}"></Label>
+								</f:label>
+								<f:fields>
+									<ComboBox  class="input" width="80%"
+										selectionChange="onRailOperationChange"	>													
+										<ListItem xmlns="sap.ui.core" />
+									</ComboBox>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+						
+					
+				</f:formContainers>
+			</f:Form>	
+			
+			
+			<!--	<l:Grid defaultSpan="L6 M6 S12"
+							class="sapUiSmallMarginBegin sapUiSmallMarginEnd sapUiSmallMarginTop">
+							<l:content>
+							
+								<HBox>
+									<Label class="sapUiSmallMarginTop sapUiSmallMarginEnd" text="{i18n>companyCode}"></Label>
+									<ComboBox id="companyCode" class="input" width=""
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+									</ComboBox>
+								</HBox>
+							
+								<HBox>
+									<Label class="sapUiSmallMarginTop sapUiSmallMarginEnd" text="{i18n>planningPlant}"></Label>
+										<ComboBox id="planningPlant" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+											</ComboBox>
+									</HBox>
+									
+								<HBox>
+									<Label class="sapUiSmallMarginTop sapUiSmallMarginEnd" text="{i18n>operation}"></Label>
+									<ComboBox id="operation" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+									</ComboBox>
+								</HBox>
+								
+								<HBox>
+									<Label class="sapUiSmallMarginTop sapUiSmallMarginEnd" text="{i18n>crop}"></Label>
+										<ComboBox id="crop" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+											</ComboBox>
+								</HBox>
+								
+									<Panel class="">
+							
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>crop}"></Label>
+										<ComboBox id="crop" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+											</ComboBox>
+									</VBox>
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>taskMaterial}"></Label>
+									<ComboBox id="taskMaterial" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+											</ComboBox>
+									</VBox>
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>productionVersion}"></Label>
+										<ComboBox id="productionVersion" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+											</ComboBox>
+									</VBox>
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>productionZone}"></Label>
+									<ComboBox id="productionZone" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+											</ComboBox>
+									</VBox>
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>area}"></Label>
+										<ComboBox id="area" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+											</ComboBox>
+									</VBox>
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>functionLocation}"></Label>
+									<ComboBox id="functionLocation" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+									</ComboBox>
+									</VBox>
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>basicStartDate}"></Label>
+									<Input id="basicStartDate" enabled="false" 
+                                          class="input" liveChange="onLiveChange" />
+                                	<DateTimePicker id="basicStartDate" enabled="false" value = "" valueFormat="yyyyMMdd:HHmmss" id="idRailOperationEDT2" width="100%" 
+										 change="onEndDateChange" placeholder="Enter Date &amp; Time ..."
+										class="input" />
+									</VBox>
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>workOrder}"></Label>
+									<ComboBox id="workOrder" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+											</ComboBox>
+									</VBox>
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>fiscalYear}"></Label>
+									<ComboBox id="fiscalYear" class="input" width="100%"
+										selectionChange="onRailOperationChange"
+										imeMode="Disabled">													
+										<ListItem xmlns="sap.ui.core" />
+											</ComboBox>
+									</VBox>
+								</Panel>
+								<Panel class="">
+								<VBox>
+									<Label class="" text="{i18n>season}"></Label>
+									<Input id="season" enabled="false" 
+                                          class="input" liveChange="onLiveChange" />
+									</VBox>
+								</Panel>
+							</l:content>
+						</l:Grid>-->
+		</content>
+		<endButton>
+			<Button text="{i18n>OK}" press="onAddFilterClose"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

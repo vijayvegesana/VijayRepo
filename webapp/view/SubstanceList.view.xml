@@ -1,0 +1,74 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.myagri.controller.SubstanceList"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Substance List" class="pageBackgroundImgClass">
+				<content>
+					<VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMarginTop funcHeaderClass">
+                        <ObjectHeader title="Company Code : GA16" number="Total Qty : 1.00">
+                    <statuses>
+                                                    <ObjectStatus text="Available Qty : 1018000032" />
+                    <ObjectStatus text="Work Order : 1018000032" />
+
+    				</statuses>
+                                    <attributes>
+                                                    <ObjectAttribute text="Plant : 1102" />
+                                                    <ObjectAttribute text="Crop : Palm" class="closingBalanceClass"/>
+                                                    <ObjectAttribute text="Material : TIU-020210" class="closingBalanceClass"/>
+                                    </attributes>
+                    </ObjectHeader>
+					</VBox>
+					<Table id="substanceListTableId" visible="true" mode="MultiSelect" items="{path:'oModel>/'}" 
+						class="newTableClass" noDataText="{worklistView>/tableNoDataText}">
+						<headerToolbar>
+							<Toolbar >
+								<Title text="" level="H5" class="panelHeaderTextClass"/>
+								<ToolbarSpacer></ToolbarSpacer>
+								<!--        <Button icon="sap-icon://add" tooltip="Add" type="Accept" class="sapMTableContentMargin"
+                                                                                                                press="onAddSubstanceList"/>-->
+								<core:Icon src="sap-icon://add" color="#FFFFFF" width="2rem" height="2rem" class="addIconClass" press="onAddSubstanceList"></core:Icon>
+								<core:Icon src="sap-icon://delete" color="#FFFFFF" width="2rem" height="2rem" class="delIconClass" press="onDeleteSubstanceList"></core:Icon>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Product" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Description" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Storage Location" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Plant Qty" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Total" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Unit" class="tableheaderClass"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+								<Label text="Batch" class="tableheaderClass"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Input value="{oModel>Product}"></Input>
+									<Text textAlign="Center" text="{oModel>Description}"></Text>
+									<Input value="{oModel>SLoc}"></Input>
+									<Input value="{oModel>Plant}"></Input>
+									<Input value="{oModel>Total}"></Input>
+									<Input value="{oModel>Unit}"></Input>
+									<Input value="{oModel>Batch}"></Input>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

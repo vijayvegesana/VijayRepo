@@ -1,0 +1,103 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:table="sap.ui.table"  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.myagri.controller.FunctionalLocation"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Functional Location" enableScrolling="true" showNavButton="false" class="pageBackgroundImgClass" navButtonPress="onNavBack">
+				<content>
+						<VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMarginTop funcHeaderClass">
+                        <ObjectHeader title="Company Code : GA16" number="Total Qty : 1.00">
+                    <statuses>
+                                                    <ObjectStatus text="Available Qty : 1018000032" />
+                    <ObjectStatus text="Work Order : 1018000032" />
+
+    				</statuses>
+                                    <attributes>
+                                                    <ObjectAttribute text="Plant : 1102" />
+                                                    <ObjectAttribute text="Crop : Palm" class="closingBalanceClass"/>
+                                                    <ObjectAttribute text="Material : TIU-020210" class="closingBalanceClass"/>
+                                    </attributes>
+                    </ObjectHeader>
+					</VBox>
+					 <table:TreeTable id="TreeTableBasic"
+				              rows="{path:'hierarchyModel>/d/result', parameters: {arrayNames:['child']}}"
+				              selectionMode="None" showNoData="true" 
+				              expandFirstLevel="true" enableSelectAll="false" ariaLabelledBy="title"
+				              toggleOpenState="toggleOpenStateFunction">
+					 			 <table:extension>
+			                    <Toolbar>
+			                        <Title id="title" text=""/>
+			                        <ToolbarSpacer/>
+			                        <Button text="Collapse all" press="onCollapseAll"/>
+			                        
+			                    </Toolbar>
+			                </table:extension>
+				              <table:columns>
+				                <table:Column width="20%">
+				                  <Label design="Bold" class="" text="Functional Location" />
+				                  <table:template>
+				                    <Link text="{hierarchyModel>FuncLoc}" press="onAccountHierarchyPress"></Link>
+				                  </table:template>
+				                </table:Column>
+				                <table:Column >
+				                  <Label design="Bold" class="" text="S.WO" />
+				                  <table:template>
+				                    <CheckBox></CheckBox>
+				                  </table:template>
+				                </table:Column>
+				                <table:Column width="10%">
+				                  <Label design="Bold" class="" text="Sort Field" />
+				                  <table:template>
+				                    <Text
+				                      text="{path:'hierarchyModel>Sort'}"
+				                      wrapping="false" />
+				                  </table:template>
+				                </table:Column>
+				                <table:Column width="10%">
+				                  <Label design="Bold" class="" text="Description" />
+				                  <table:template>
+				                    <Text
+				                      text="{path:'hierarchyModel>Desc'}"
+				                      wrapping="false" />
+				                  </table:template>
+				                </table:Column>
+				                 <table:Column width="10%" >
+				                  <Label design="Bold" class="" text="Area" />
+				                  <table:template>
+				                    <Link text="{hierarchyModel>Area}" press="onAccountHierarchyPress"></Link>
+				                  </table:template>
+				                </table:Column>
+				                <table:Column width="10%">
+				                  <Label design="Bold" class="" text="Unit" />
+				                  <table:template>
+				                    <Text text="{hierarchyModel>Unit}" wrapping="false" />
+				                  </table:template>
+				                </table:Column>
+				                <table:Column width="10%">
+				                  <Label design="Bold" class="" text="CAT Order" />
+				                  <table:template>
+				                    <Text
+				                      text="{path:'hierarchyModel>FlagIdent'}"
+				                      wrapping="false" />
+				                  </table:template>
+				                </table:Column>
+				                <table:Column width="10%">
+				                  <Label design="Bold" class="" text="Conf." />
+				                  <table:template>
+				                		<CheckBox></CheckBox>
+				                  </table:template>
+				                </table:Column>
+				                 <table:Column width="10%">
+				                  <Label design="Bold" class="" text="Close" />
+				                  <table:template>
+				                    <CheckBox selected="{path:'hierarchyModel>selected'}"></CheckBox>
+				                  </table:template>
+				                </table:Column>
+				              </table:columns>
+				            </table:TreeTable>
+					
+		
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
